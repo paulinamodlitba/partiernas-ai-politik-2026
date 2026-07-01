@@ -227,6 +227,8 @@ table.cmp th.dim{opacity:.4}
 .pcard .who h3{font-size:clamp(1.55rem,3vw,2.05rem)}
 .pcard .who .role{color:var(--muted);font-size:.98rem;margin-top:2px}
 .pcard .who .party{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pc);font-weight:600;margin-top:6px}
+.pcard .ep-link{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-family:"IBM Plex Mono",monospace;font-size:.76rem;font-weight:600;color:var(--pc);border:1.5px solid var(--pc);padding:7px 14px;border-radius:100px;transition:.15s;letter-spacing:.02em}
+.pcard .ep-link:hover{background:var(--pc);color:#fff;text-decoration:none}
 .pcard .summary{font-size:1.12rem;margin:24px 0 8px;max-width:70ch}
 .pcard .summary .lead{color:var(--pc);font-weight:700}
 
@@ -480,7 +482,7 @@ footer.foot .wsbf b{color:var(--yellow)}
       </div>
       <div class="box">
         <h4>Så gjordes den</h4>
-        <p>Transkriberingarna har lästs igenom och sammanfattats tema för tema. Citaten är ordagranna ur intervjuerna, med ungefärlig tidsangivelse. Sammanfattningar och placeringar är AI-assisterade och redaktionellt bearbetade.</p>
+        <p>Transkriberingarna har lästs igenom och sammanfattats tema för tema. Citaten är ordagranna ur intervjuerna, med ungefärlig tidsangivelse. Sammanfattningar och placeringar är AI-assisterade och har granskats och bearbetats av Paulina Modlitba.</p>
         <p>Sammanställningen och webbplatsen har tagits fram med hjälp av Claude Code (Anthropic). AI-genererat innehåll kan innehålla felaktigheter eller feltolkningar, och uppgifter bör därför verifieras mot originalintervjuerna.</p>
       </div>
       <div class="box">
@@ -777,10 +779,16 @@ const byCode = Object.fromEntries(PARTIES.map(p=>[p.code,p]));
   apply();
 })();
 
+/* ---------- länkar till respektive poddavsnitt (fyll i URL per parti) ---------- */
+const EPISODES = {
+  V:"", S:"", MP:"", C:"", L:"", KD:"", M:""
+};
+
 /* ---------- render party cards ---------- */
 (function(){
   const host=document.getElementById("cards");
   PARTIES.forEach(p=>{
+    const ep=EPISODES[p.code]||"";
     const card=document.createElement("article");
     card.className="pcard reveal";
     card.id="parti-"+p.code.toLowerCase();
@@ -804,6 +812,7 @@ const byCode = Object.fromEntries(PARTIES.map(p=>[p.code,p]));
             <h3>${p.person}</h3>
             <div class="role">${p.role}</div>
             <div class="party">${p.party}</div>
+            ${ep?`<a class="ep-link" href="${ep}" target="_blank" rel="noopener">▶ Lyssna på avsnittet</a>`:""}
           </div>
         </div>
         <p class="summary"><span class="lead">${p.summary.lead}</span>${p.summary.rest}</p>
