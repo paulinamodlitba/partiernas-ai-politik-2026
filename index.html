@@ -364,7 +364,7 @@ footer.foot .wsbf b{color:var(--yellow)}
       <span>Källa: <b>AI Sweden</b> Podcast</span>
     </div>
     <div class="flag">
-      <b>En sak att känna till:</b> materialet bygger på sju av riksdagens åtta partier. Sverigedemokraterna (SD) ingår inte i det underlag som sammanställningen utgår från.
+      <b>En sak att känna till:</b> materialet bygger på sju av riksdagens åtta partier. AI Sweden uppger att samtliga riksdagspartier bjudits in, men det finns inget publicerat avsnitt med Sverigedemokraterna (SD) och därför ingår de inte i underlaget.
     </div>
   </div>
 </header>
@@ -476,6 +476,7 @@ footer.foot .wsbf b{color:var(--yellow)}
       <div class="box">
         <h4>Så gjordes den</h4>
         <p>Transkriberingarna har lästs igenom och sammanfattats tema för tema. Citaten är ordagranna ur intervjuerna, med ungefärlig tidsangivelse. Sammanfattningar och placeringar är AI-assisterade och redaktionellt bearbetade.</p>
+        <p>Sammanställningen och webbplatsen har tagits fram med hjälp av Claude Code (Anthropic). AI-genererat innehåll kan innehålla felaktigheter eller feltolkningar, och uppgifter bör därför verifieras mot originalintervjuerna.</p>
       </div>
       <div class="box">
         <h4>Partierna</h4>
@@ -491,7 +492,7 @@ footer.foot .wsbf b{color:var(--yellow)}
       </div>
       <div class="box">
         <h4>Bra att veta</h4>
-        <p>SD ingår inte i underlaget. Placeringarna på skalorna är en tolkning, inte partiernas egna. Vid oklarhet gäller alltid det som sägs i originalintervjun.</p>
+        <p>AI Sweden uppger att samtliga riksdagspartier har bjudits in till podden. Det finns dock inget publicerat avsnitt med Sverigedemokraterna (SD), och AI Sweden anger ingen förklaring till frånvaron. SD ingår därför inte i underlaget. Placeringarna på skalorna är en tolkning, inte partiernas egna. Vid oklarhet gäller alltid det som sägs i originalintervjun.</p>
       </div>
     </div>
     <p class="disc">Detta är en fristående, pedagogisk sammanställning. Den är inte framtagen av, beställd av eller kopplad till AI Sweden, och gör inte anspråk på att vara heltäckande. Syftet är att göra det lättare att förstå och jämföra partiernas AI-politik inför valet. Hänvisa gärna till originalintervjuerna för fullständig kontext.</p>
@@ -953,7 +954,7 @@ const QUIZ = [
         <div class="rtitle">Närmast dig: ${topName}</div>
         <div class="rsub">Så här väl matchar partiernas AI-åsikter dina svar.</div>
         ${rowsHtml}
-        <div class="salt"><b>Ta det med en nypa salt.</b> Det här är ingen vetenskaplig valkompass. Matchningen bygger enbart på vad partiföreträdarna säger i AI Swedens Valårspodd — inte på partiprogram eller politiken i stort. Se det som en fingervisning och en ingång till att lyssna själv. SD ingår inte.</div>
+        <div class="salt"><b>Så bör resultatet tolkas.</b> Det här är ingen vetenskaplig valkompass. Matchningen bygger enbart på vad partiföreträdarna uttrycker i AI Swedens Valårspodd, inte på partiprogram eller partiernas politik i stort. Resultatet ska betraktas som en vägledning och en uppmuntran att ta del av intervjuerna i sin helhet. Sverigedemokraterna ingår inte i underlaget.</div>
         <div class="again"><button class="ctl primary" data-act="restart">Gör om testet</button></div>
       </div>`;
     requestAnimationFrame(()=>{ host.querySelectorAll(".fill2").forEach(f=>{ f.style.width=f.dataset.w+"%"; }); });
