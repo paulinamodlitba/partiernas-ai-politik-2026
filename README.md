@@ -1,6 +1,6 @@
 # Partiernas AI-politik inför valet 2026
 
-En fristående, pedagogisk webbsida som sammanfattar och jämför sju svenska partiers syn på AI, baserat på AI Sweden Podcast-serien *"AI Sweden möter … · Valåret 2026"* (programledare Anders Olsson).
+En fristående, pedagogisk webbsida som sammanfattar och jämför sju svenska partiers syn på AI, baserat på AI Sweden Podcast-serien *"AI Sweden möter … · Valåret 2026"* (programledare Anders Thoresson).
 
 Sidan består av en enda självständig `index.html` utan byggsteg eller beroenden (typsnitt hämtas från Google Fonts).
 
