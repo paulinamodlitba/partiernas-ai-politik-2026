@@ -275,11 +275,55 @@ footer.foot .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:
 footer.foot .wsbf{font-family:"Archivo",sans-serif;font-weight:700;color:#fff;font-size:1rem}
 footer.foot .wsbf b{color:var(--yellow)}
 
+/* ---------- top disclaimer bar ---------- */
+.topbar{background:var(--navy-deep);color:#c3ccd2;font-size:.82rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.topbar .wrap{display:flex;gap:8px 16px;align-items:center;justify-content:center;text-align:center;padding:9px 30px;flex-wrap:wrap}
+.topbar b{color:#fff;font-weight:600}
+.topbar a{color:var(--yellow);font-weight:600;white-space:nowrap}
+
+/* ---------- valkompass ---------- */
+.compass-sec{background:var(--navy);color:#fff}
+.compass-sec .eyebrow{color:var(--yellow)}
+.compass-sec .sec-head h2{color:#fff}
+.compass-sec .sec-head p{color:#c3ccd2}
+.compass{max-width:760px;margin:0 auto;background:#13283a;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:clamp(24px,4vw,44px);box-shadow:var(--shadow)}
+.compass .progress{height:6px;background:rgba(255,255,255,.12);border-radius:100px;overflow:hidden;margin-bottom:10px}
+.compass .progress .bar{display:block;height:100%;background:var(--yellow);width:0;transition:width .35s ease}
+.compass .qcount{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8ea3b2;margin-bottom:22px}
+.compass .qtext{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(1.35rem,3.2vw,2rem);line-height:1.12;margin-bottom:24px;letter-spacing:-.02em}
+.compass .opts{display:grid;gap:11px}
+.compass .opt{display:flex;gap:14px;align-items:flex-start;text-align:left;width:100%;
+  background:#0e1e2a;border:1.5px solid rgba(255,255,255,.14);color:#fff;
+  border-radius:12px;padding:15px 18px;cursor:pointer;font-family:inherit;font-size:1.01rem;line-height:1.4;transition:.15s}
+.compass .opt:hover{border-color:var(--yellow);background:#122a3c}
+.compass .opt .dot{flex:none;width:21px;height:21px;border-radius:50%;border:2px solid rgba(255,255,255,.4);margin-top:2px;transition:.15s}
+.compass .opt.sel{border-color:var(--yellow);background:#122a3c}
+.compass .opt.sel .dot{background:var(--yellow);border-color:var(--yellow)}
+.compass .cbtns{display:flex;justify-content:space-between;margin-top:22px;gap:12px}
+.compass button.ctl{font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:600;border-radius:100px;padding:10px 20px;cursor:pointer;border:1.5px solid rgba(255,255,255,.28);background:transparent;color:#fff;transition:.15s}
+.compass button.ctl:hover:not(:disabled){border-color:#fff}
+.compass button.ctl.primary{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.compass button.ctl:disabled{opacity:.3;cursor:not-allowed}
+.result .rtitle{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(1.5rem,3.4vw,2.1rem);margin-bottom:6px;letter-spacing:-.02em}
+.result .rsub{color:#c3ccd2;margin-bottom:26px;font-size:.98rem}
+.result .rrow{display:flex;align-items:center;gap:14px;margin-bottom:15px}
+.result .rrow .rp{flex:none;width:46px;height:46px;border-radius:11px;display:grid;place-items:center;font-family:"Archivo",sans-serif;font-weight:800;color:#fff;font-size:1.05rem}
+.result .rrow .rb{flex:1;min-width:0}
+.result .rrow .rname{display:flex;justify-content:space-between;gap:10px;font-size:.92rem;margin-bottom:5px}
+.result .rrow .rname .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.result .rrow .rname .pct{font-family:"IBM Plex Mono",monospace;color:var(--yellow);font-weight:600}
+.result .rrow.top .rname{font-weight:700}
+.result .track2{height:9px;background:rgba(255,255,255,.12);border-radius:100px;overflow:hidden}
+.result .fill2{display:block;height:100%;border-radius:100px;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.result .salt{margin-top:28px;background:rgba(255,210,30,.1);border-left:4px solid var(--yellow);padding:14px 18px;border-radius:0 10px 10px 0;font-size:.9rem;color:#d9e0e6;line-height:1.55}
+.result .again{margin-top:22px}
+
 @media(max-width:760px){
   body{font-size:17px}
   .themes{grid-template-columns:1fr}
   nav.top .navlinks{display:none}
   .hero .meta span{font-size:.72rem}
+  .compass .opt{font-size:.97rem}
 }
 @media(prefers-reduced-motion:reduce){
   .reveal-h > *,.reveal{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}
@@ -288,11 +332,19 @@ footer.foot .wsbf b{color:var(--yellow)}
 </head>
 <body>
 
+<div class="topbar">
+  <div class="wrap">
+    <span>Detta är <b>inte</b> AI Sweden. Sajten är skapad av <b>Paulina Modlitba</b> (We Should Be Friends AB) och bygger på innehållet i AI Swedens Valårspodd.</span>
+    <a href="https://www.ai.se/sv/nyheter/lyssna-pa-ai-swedens-valarspodd" target="_blank" rel="noopener">Lyssna på podden →</a>
+  </div>
+</div>
+
 <nav class="top">
   <div class="wrap">
     <span class="brand">Partiernas <b>AI</b>-politik · 2026</span>
     <div class="navlinks">
       <a href="#skiljelinjer">Skiljelinjer</a>
+      <a href="#valkompass">Valkompass</a>
       <a href="#tabell">Jämförelse</a>
       <a href="#partier">Partierna</a>
       <a href="#analys">Analys</a>
@@ -335,6 +387,18 @@ footer.foot .wsbf b{color:var(--yellow)}
       <p>Alla sju lutar åt möjligheter snarare än rädsla. De verkliga skillnaderna ligger djupare: hur mycket AI ska regleras, och vem som ska få del av vinsterna. Placeringarna nedan är en tolkning av vad politikerna faktiskt säger i intervjuerna.</p>
     </div>
     <div class="spectra reveal" id="spectra"></div>
+  </div>
+</section>
+
+<!-- ============ VALKOMPASS ============ -->
+<section id="valkompass" class="compass-sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Testa själv</div>
+      <h2>AI-valkompassen</h2>
+      <p>Svara på tolv frågor om AI, så visar kompassen vilka partiers AI-åsikter som ligger närmast dina — utifrån vad de faktiskt säger i AI Swedens podd.</p>
+    </div>
+    <div class="compass reveal" id="compass"></div>
   </div>
 </section>
 
@@ -407,7 +471,7 @@ footer.foot .wsbf b{color:var(--yellow)}
     <div class="grid reveal">
       <div class="box">
         <h4>Underlaget</h4>
-        <p>Sju avsnitt ur AI Sweden Podcast i serien ”AI Sweden möter … · Valåret 2026”, med programledare Anders Olsson. Varje avsnitt är en enskild intervju med en partiföreträdare.</p>
+        <p>Sju avsnitt ur AI Sweden Podcast i serien ”AI Sweden möter … · Valåret 2026”, med programledare Anders Olsson. Varje avsnitt är en enskild intervju med en partiföreträdare. <a href="https://www.ai.se/sv/nyheter/lyssna-pa-ai-swedens-valarspodd" target="_blank" rel="noopener">Lyssna på Valårspodden →</a></p>
       </div>
       <div class="box">
         <h4>Så gjordes den</h4>
@@ -743,6 +807,164 @@ const byCode = Object.fromEntries(PARTIES.map(p=>[p.code,p]));
       </div>`;
     host.appendChild(card);
   });
+})();
+
+/* ---------- AI-valkompassen ---------- */
+const QUIZ = [
+  {q:"Hur ser du på EU:s reglering av AI?", opts:[
+    {t:"Den är för hård och bromsar innovation — lätta på reglerna", p:["C","M"]},
+    {t:"Reglera hur AI används och uppdatera gammal lag, inte tekniken själv", p:["KD","MP"]},
+    {t:"EU:s risknivåbaserade modell (AI Act) är ungefär rätt", p:["L"]},
+    {t:"Vill se starkare, gärna global reglering och tydligt ansvar", p:["S","V"]}
+  ]},
+  {q:"Vad är viktigast i AI-politiken?", opts:[
+    {t:"Tillväxt och konkurrenskraft — bra villkor för företag", p:["M","C","L"]},
+    {t:"Att vinsterna fördelas rättvist och tryggheten finns kvar", p:["V","MP"]},
+    {t:"Både tillväxt och trygghet — det ena kräver det andra", p:["S"]},
+    {t:"Att välfärden och offentlig sektor blir bättre", p:["KD"]}
+  ]},
+  {q:"AI och jobben — vad tänker du?", opts:[
+    {t:"Teknik skapar nya jobb; satsa på omskolning och omställning", p:["M","KD","C"]},
+    {t:"Oroande — a-kassa och trygghetssystem måste hålla", p:["S"]},
+    {t:"Dela på jobben och korta arbetstiden", p:["V","MP"]},
+    {t:"Alla yrken påverkas; viktigast att ingen blir rädd", p:["L"]}
+  ]},
+  {q:"AI i välfärd och offentlig sektor — vad ska prioriteras?", opts:[
+    {t:"Bryt stuprören mellan kommuner, regioner och myndigheter", p:["KD","C"]},
+    {t:"Ja, men alltid en människa bakom myndighetsbeslut", p:["V"]},
+    {t:"Inför stegvis — och vårddata måste stanna i Sverige", p:["L"]},
+    {t:"Enorm nytta: avlasta vården och upptäck sjukdomar tidigare", p:["M","MP","S"]}
+  ]},
+  {q:"Datacenter och energi — vilken linje gillar du?", opts:[
+    {t:"Ställ krav på datacenter: spillvärme och bidrag till elen", p:["S"]},
+    {t:"Bygg ut fossilfri baskraft, inklusive kärnkraft", p:["M"]},
+    {t:"AI ska optimera grön el — och elkonflikten måste desarmeras", p:["MP","C"]},
+    {t:"Bygg en svensk och europeisk data-hub med kompetens", p:["L","KD"]}
+  ]},
+  {q:"Beroendet av amerikanska molntjänster — vad göra?", opts:[
+    {t:"Bygg egen europeisk förmåga — värdet får inte fastna i USA", p:["S"]},
+    {t:"Stärk EU tidigt och kontrollera samhällskritisk data", p:["L"]},
+    {t:"Oberoende oavsett USA eller Kina — sårbart i andras händer", p:["V","MP"]},
+    {t:"Öppenhet och samarbete, men olika regler för olika data", p:["M","C","KD"]}
+  ]},
+  {q:"Utbildning och AI-kompetens — vad ska Sverige göra?", opts:[
+    {t:"Bli världsledande på AI-kompetens (t.ex. en ”hemchattreform”)", p:["L","M"]},
+    {t:"Folkbildning om AI — även riktad mot äldre", p:["V"]},
+    {t:"Lär ut hantverket och källkritik (”pärm och skärm”)", p:["C"]},
+    {t:"Kompetensutveckling för alla i arbetslivet — lärare först", p:["MP","KD","S"]}
+  ]},
+  {q:"Vad väger tyngst kring AI, demokrati och integritet?", opts:[
+    {t:"Oro för desinformation, fejk och integritet", p:["V","S"]},
+    {t:"AI får inte manipulera val eller människor — skydda datan", p:["KD","M"]},
+    {t:"Politiken måste sätta gränser för integritet och rättigheter", p:["L"]},
+    {t:"Bias och frågan ”vad styr modellerna?” är en demokratifråga", p:["MP","C"]}
+  ]},
+  {q:"Vilken roll ska Sverige ta i AI-utvecklingen?", opts:[
+    {t:"Ledande techscen — ”Europas Silicon Valley”", p:["M","L","KD"]},
+    {t:"Tänk som ”AB Sverige” och välj strategiska teknikområden", p:["S"]},
+    {t:"Hitta smarta tillämpningar — inte bygga grundmodellerna", p:["MP","C"]},
+    {t:"Vi är ett litet land — agera tillsammans med EU", p:["V"]}
+  ]},
+  {q:"Din grundinställning till AI?", opts:[
+    {t:"Övervägande möjligheter — vi måste köra på", p:["M","MP"]},
+    {t:"Möjligheter, men styr det i en fri, demokratisk riktning", p:["L","KD","S"]},
+    {t:"Möjligheter — men politiken har varit alldeles för långsam", p:["C"]},
+    {t:"Möjligheter, men riskerna väger tungt", p:["V"]}
+  ]},
+  {q:"Vad ska staten göra för AI i näringslivet?", opts:[
+    {t:"Sänk skatt, förenkla regler, personaloptioner och talangvisum", p:["M"]},
+    {t:"Stärk innovationskluster och satsa på forskning", p:["C","V"]},
+    {t:"Öppna offentlig upphandling för mindre företag", p:["L","KD"]},
+    {t:"Strategisk styrning och en tillväxtpakt", p:["S","MP"]}
+  ]},
+  {q:"Vad oroar dig mest med AI?", opts:[
+    {t:"Att Sverige och Europa halkar efter", p:["C","MP","M"]},
+    {t:"Att jobb försvinner utan trygghet", p:["S"]},
+    {t:"Övervakning, integritet och desinformation", p:["V"]},
+    {t:"Beroendet av utländska techjättar och förlorad kontroll över data", p:["L","KD"]}
+  ]}
+];
+
+(function(){
+  const host=document.getElementById("compass");
+  if(!host) return;
+  const answers=new Array(QUIZ.length).fill(null);
+  let cur=0;
+
+  function renderQuestion(){
+    const item=QUIZ[cur];
+    const pct=Math.round((cur)/QUIZ.length*100);
+    let opts="";
+    item.opts.forEach((o,i)=>{
+      opts+=`<button class="opt${answers[cur]===i?' sel':''}" data-i="${i}"><span class="dot"></span><span>${o.t}</span></button>`;
+    });
+    host.innerHTML=`
+      <div class="progress"><span class="bar" style="width:${pct}%"></span></div>
+      <div class="qcount">Fråga ${cur+1} av ${QUIZ.length}</div>
+      <div class="qtext">${item.q}</div>
+      <div class="opts">${opts}</div>
+      <div class="cbtns">
+        <button class="ctl" data-act="back" ${cur===0?'disabled':''}>← Tillbaka</button>
+        <button class="ctl primary" data-act="next" ${answers[cur]===null?'disabled':''}>${cur===QUIZ.length-1?'Visa resultat':'Nästa →'}</button>
+      </div>`;
+    host.querySelectorAll(".opt").forEach(b=>{
+      b.onclick=()=>{
+        answers[cur]=parseInt(b.dataset.i,10);
+        host.querySelectorAll(".opt").forEach(x=>x.classList.remove("sel"));
+        b.classList.add("sel");
+        const nx=host.querySelector('[data-act="next"]'); if(nx) nx.disabled=false;
+        setTimeout(()=>{ if(cur<QUIZ.length-1){cur++;renderQuestion();} else {renderResult();} },240);
+      };
+    });
+    const back=host.querySelector('[data-act="back"]');
+    if(back) back.onclick=()=>{ if(cur>0){cur--;renderQuestion();} };
+    const next=host.querySelector('[data-act="next"]');
+    if(next) next.onclick=()=>{ if(answers[cur]===null) return; if(cur<QUIZ.length-1){cur++;renderQuestion();} else {renderResult();} };
+  }
+
+  function renderResult(){
+    const opp={}, hit={};
+    PARTIES.forEach(p=>{opp[p.code]=0;hit[p.code]=0;});
+    QUIZ.forEach((item,qi)=>{
+      const inThis=new Set();
+      item.opts.forEach(o=>o.p.forEach(c=>inThis.add(c)));
+      inThis.forEach(c=>opp[c]++);
+      const a=answers[qi];
+      if(a!=null){ item.opts[a].p.forEach(c=>hit[c]++); }
+    });
+    const rows=PARTIES.map(p=>({
+      code:p.code, party:p.party, color:p.color,
+      pct: opp[p.code] ? Math.round(100*hit[p.code]/opp[p.code]) : 0
+    })).sort((a,b)=> b.pct-a.pct || a.code.localeCompare(b.code));
+    const topName=rows[0].party;
+    let rowsHtml="";
+    rows.forEach((r,i)=>{
+      rowsHtml+=`
+        <div class="rrow${i===0?' top':''}">
+          <div class="rp" style="background:${r.color}">${r.code}</div>
+          <div class="rb">
+            <div class="rname"><span class="nm">${r.party}</span><span class="pct">${r.pct}%</span></div>
+            <div class="track2"><span class="fill2" data-w="${r.pct}" style="background:${r.color}"></span></div>
+          </div>
+        </div>`;
+    });
+    host.innerHTML=`
+      <div class="result">
+        <div class="rtitle">Närmast dig: ${topName}</div>
+        <div class="rsub">Så här väl matchar partiernas AI-åsikter dina svar.</div>
+        ${rowsHtml}
+        <div class="salt"><b>Ta det med en nypa salt.</b> Det här är ingen vetenskaplig valkompass. Matchningen bygger enbart på vad partiföreträdarna säger i AI Swedens Valårspodd — inte på partiprogram eller politiken i stort. Se det som en fingervisning och en ingång till att lyssna själv. SD ingår inte.</div>
+        <div class="again"><button class="ctl primary" data-act="restart">Gör om testet</button></div>
+      </div>`;
+    requestAnimationFrame(()=>{ host.querySelectorAll(".fill2").forEach(f=>{ f.style.width=f.dataset.w+"%"; }); });
+    host.querySelector('[data-act="restart"]').onclick=()=>{
+      for(let i=0;i<answers.length;i++) answers[i]=null;
+      cur=0; renderQuestion();
+      host.scrollIntoView({behavior:"smooth",block:"start"});
+    };
+  }
+
+  renderQuestion();
 })();
 
 /* ---------- analysis tag chips ---------- */
