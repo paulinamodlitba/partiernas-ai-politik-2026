@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partiernas AI-politik inför valet 2026 — en jämförelse</title>
+<meta name="description" content="En pedagogisk sammanställning och jämförelse av sju svenska partiers syn på AI, baserad på AI Swedens podcastintervjuer inför valåret 2026.">
+<meta property="og:title" content="Partiernas AI-politik inför valet 2026">
+<meta property="og:description" content="Vad säger partiledare och politiker om AI? Sju intervjuer, sammanfattade och jämförda.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d100e;
+  --ink-2:#191d1a;
+  --paper:#faf3e8;
+  --paper-2:#f1e6d3;
+  --paper-3:#ece0ca;
+  --green:#00d689;
+  --green-deep:#067a4e;
+  --green-dark:#04351f;
+  --line:#d8c9ac;
+  --muted:#5c5648;
+  --shadow:0 1px 2px rgba(13,16,14,.04),0 12px 40px -18px rgba(13,16,14,.22);
+
+  /* party colours (used only on small chips/bars for recognition) */
+  --p-v:#c0143c;
+  --p-s:#e8112d;
+  --p-mp:#4b9b2e;
+  --p-c:#009933;
+  --p-l:#006ab3;
+  --p-kd:#1a1a6b;
+  --p-m:#1c5fa8;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Source Sans 3",system-ui,sans-serif;
+  font-size:18px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* subtle paper grain */
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  opacity:.45;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+h1,h2,h3,h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;line-height:1.02;margin:0;letter-spacing:-.02em}
+a{color:var(--green-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+.mono{font-family:"IBM Plex Mono",monospace}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--green-deep);font-weight:500;
+}
+
+/* ---------- top nav ---------- */
+nav.top{
+  position:sticky;top:0;z-index:60;
+  background:rgba(13,16,14,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+nav.top .wrap{display:flex;align-items:center;gap:18px;height:60px}
+nav.top .brand{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  color:var(--paper);font-size:1.02rem;letter-spacing:-.01em;white-space:nowrap;
+}
+nav.top .brand b{color:var(--green)}
+nav.top .navlinks{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav.top .navlinks a{
+  font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:500;
+  color:rgba(250,243,232,.72);padding:6px 9px;border-radius:6px;letter-spacing:.04em;
+}
+nav.top .navlinks a:hover{color:var(--ink);background:var(--green);text-decoration:none}
+
+/* ---------- hero ---------- */
+header.hero{
+  background:var(--ink);color:var(--paper);
+  position:relative;overflow:hidden;
+  padding:clamp(70px,11vw,140px) 0 clamp(56px,8vw,96px);
+}
+header.hero::after{
+  content:"";position:absolute;right:-14%;top:-30%;width:60%;height:150%;
+  background:radial-gradient(closest-side,rgba(0,214,137,.20),transparent 70%);
+  pointer-events:none;
+}
+.hero .eyebrow{color:var(--green)}
+.hero h1{
+  font-size:clamp(2.6rem,7vw,5.4rem);margin:.32em 0 .1em;
+  max-width:15ch;
+}
+.hero h1 .hl{color:var(--green)}
+.hero .lede{
+  font-size:clamp(1.1rem,2.1vw,1.4rem);max-width:60ch;color:#e7ddca;font-weight:300;
+  margin-top:.7em;
+}
+.hero .meta{
+  display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;
+  font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:rgba(250,243,232,.7);
+}
+.hero .meta span{border:1px solid rgba(250,243,232,.22);padding:6px 12px;border-radius:100px}
+.hero .meta b{color:var(--green);font-weight:600}
+.reveal-h > *{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal-h > *:nth-child(1){animation-delay:.05s}
+.reveal-h > *:nth-child(2){animation-delay:.16s}
+.reveal-h > *:nth-child(3){animation-delay:.28s}
+.reveal-h > *:nth-child(4){animation-delay:.42s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* flag box (SD missing) */
+.flag{
+  margin-top:30px;max-width:64ch;
+  border-left:3px solid var(--green);
+  background:rgba(0,214,137,.06);
+  padding:14px 18px;border-radius:0 10px 10px 0;
+  font-size:.95rem;color:#e7ddca;
+}
+
+/* ---------- section scaffolding ---------- */
+section{padding:clamp(58px,9vw,104px) 0;position:relative}
+section.alt{background:var(--paper-2)}
+.sec-head{max-width:64ch;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.9rem,4.2vw,3rem);margin:.28em 0 .3em}
+.sec-head p{color:var(--muted);font-size:1.08rem;margin:0}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- spectra ---------- */
+.spectra{display:grid;gap:40px}
+.axis{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px 30px 20px;box-shadow:var(--shadow)}
+section.alt .axis{background:var(--paper)}
+.axis h3{font-size:1.15rem;margin-bottom:4px}
+.axis .axis-sub{font-size:.9rem;color:var(--muted);margin-bottom:30px}
+.axis .track{position:relative;height:64px;margin:0 8px}
+.axis .line{
+  position:absolute;left:0;right:0;top:14px;height:6px;border-radius:100px;
+  background:linear-gradient(90deg,var(--c1),var(--c2));
+}
+.axis .ends{display:flex;justify-content:space-between;margin-top:44px;
+  font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.axis .ends .r{text-align:right}
+.chip{
+  position:absolute;top:17px;transform:translate(-50%,-50%);
+  width:30px;height:30px;border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:.72rem;
+  border:2px solid var(--paper);cursor:default;
+  box-shadow:0 2px 6px rgba(13,16,14,.28);transition:transform .2s ease;
+}
+.chip:hover{transform:translate(-50%,-50%) scale(1.18);z-index:5}
+.chip[data-lift="1"]{top:-4px}
+.chip[data-lift="2"]{top:38px}
+.chip .tip{
+  position:absolute;bottom:135%;left:50%;transform:translateX(-50%) translateY(6px);
+  background:var(--ink);color:var(--paper);padding:7px 11px;border-radius:8px;
+  font-family:"Source Sans 3",sans-serif;font-weight:400;font-size:.8rem;line-height:1.3;
+  white-space:nowrap;opacity:0;pointer-events:none;transition:.18s;
+}
+.chip:hover .tip{opacity:1;transform:translateX(-50%)}
+.axis-note{font-size:.82rem;color:var(--muted);margin-top:34px;font-style:italic}
+
+/* ---------- comparison table ---------- */
+.table-tools{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.table-tools .lbl{font-family:"IBM Plex Mono",monospace;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.pfilter{display:flex;gap:6px;flex-wrap:wrap}
+.pfilter button{
+  font-family:"IBM Plex Mono",monospace;font-size:.76rem;font-weight:600;
+  border:1.5px solid var(--line);background:var(--paper);color:var(--ink);
+  padding:5px 11px;border-radius:100px;cursor:pointer;transition:.15s;
+}
+.pfilter button:hover{border-color:var(--ink)}
+.pfilter button.active{color:#fff}
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);background:var(--paper)}
+table.cmp{border-collapse:collapse;width:100%;min-width:940px;font-size:.92rem}
+table.cmp th,table.cmp td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+table.cmp thead th{position:sticky;top:0;z-index:2}
+table.cmp thead th.theme-col{background:var(--ink);color:var(--paper);border-radius:16px 0 0 0}
+table.cmp .phead{color:#fff;text-align:center}
+table.cmp .phead .pl{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.05rem}
+table.cmp .phead .pn{display:block;font-family:"IBM Plex Mono",monospace;font-size:.66rem;font-weight:400;opacity:.9;margin-top:2px}
+table.cmp tbody th{
+  background:var(--paper-3);font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.95rem;
+  position:sticky;left:0;z-index:1;min-width:150px;max-width:170px;
+}
+table.cmp tbody td{min-width:150px;color:var(--ink-2)}
+table.cmp tbody tr:last-child td{border-bottom:none}
+table.cmp td.dim{opacity:.24;filter:grayscale(.4)}
+table.cmp th.dim{opacity:.35}
+.noscript-note{background:var(--paper-3);border:1px solid var(--line);padding:16px 20px;border-radius:12px;color:var(--muted)}
+
+/* ---------- party cards ---------- */
+.cards{display:grid;gap:34px}
+.pcard{
+  background:var(--paper);border:1px solid var(--line);border-radius:20px;
+  overflow:hidden;box-shadow:var(--shadow);scroll-margin-top:78px;
+}
+.pcard .bar{height:7px;background:var(--pc)}
+.pcard .pc-in{padding:clamp(26px,3.4vw,44px)}
+.pcard .pc-top{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.badge{
+  flex:none;width:66px;height:66px;border-radius:16px;background:var(--pc);
+  color:#fff;display:grid;place-items:center;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.7rem;letter-spacing:-.03em;
+}
+.pcard .who h3{font-size:clamp(1.5rem,3vw,2rem)}
+.pcard .who .role{color:var(--muted);font-size:.98rem;margin-top:2px}
+.pcard .who .party{
+  font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--pc);font-weight:600;margin-top:6px;
+}
+.pcard .summary{font-size:1.12rem;margin:24px 0 8px;max-width:70ch}
+.pcard .summary .lead{color:var(--pc);font-weight:600}
+
+.themes{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:26px;
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--line)}
+.themes .t{background:var(--paper);padding:16px 18px}
+.themes .t .tk{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--green-deep);font-weight:600;display:block;margin-bottom:5px}
+.themes .t p{margin:0;font-size:.95rem;color:var(--ink-2);line-height:1.5}
+
+.quotes{margin-top:26px;display:grid;gap:14px}
+.quote{
+  border-left:3px solid var(--pc);padding:6px 0 6px 20px;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:1.16rem;line-height:1.28;letter-spacing:-.01em;
+}
+.quote .src{display:block;margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:400;color:var(--muted);letter-spacing:.05em}
+
+.extra{display:grid;gap:14px;margin-top:26px}
+.pill-note{background:var(--paper-2);border-radius:12px;padding:15px 18px}
+.pill-note .h{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;display:block;margin-bottom:4px}
+.pill-note p{margin:0;font-size:.96rem;color:var(--ink-2)}
+
+/* ---------- analysis ---------- */
+.analysis{max-width:74ch;margin:0 auto}
+.analysis .lines{display:grid;gap:26px;margin-top:8px}
+.split{border-top:1px solid var(--line);padding-top:22px}
+.split h3{font-size:1.3rem;margin-bottom:8px;display:flex;align-items:baseline;gap:12px}
+.split h3 .n{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--green-deep)}
+.split p{margin:0;color:var(--ink-2)}
+.split p + p{margin-top:10px}
+.split .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.split .tags span{font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:600;color:#fff;padding:3px 9px;border-radius:100px}
+
+/* ---------- method / footer ---------- */
+.method{background:var(--ink);color:var(--paper)}
+.method .sec-head h2{color:var(--paper)}
+.method .sec-head p{color:#c9c0ae}
+.method .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin-top:12px}
+.method .box h4{color:var(--green);font-size:1.05rem;margin-bottom:8px;font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:.02em;text-transform:uppercase;font-size:.82rem}
+.method .box p{color:#d8cfbd;font-size:.95rem;margin:0}
+.method .box ul{margin:0;padding-left:18px;color:#d8cfbd;font-size:.92rem}
+.method .box li{margin-bottom:4px}
+.method a{color:var(--green)}
+.disc{margin-top:44px;padding-top:26px;border-top:1px solid rgba(250,243,232,.16);font-size:.86rem;color:#b3aa98;max-width:78ch}
+
+footer.foot{background:#080a09;color:#9a9382;padding:40px 0;font-size:.86rem}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer.foot .wsbf{font-family:"Bricolage Grotesque",sans-serif;color:var(--paper);font-size:1rem}
+footer.foot .wsbf b{color:var(--green)}
+
+@media(max-width:760px){
+  body{font-size:17px}
+  .themes{grid-template-columns:1fr}
+  nav.top .navlinks{display:none}
+  .hero .meta span{font-size:.72rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal-h > *,.reveal{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <span class="brand">Partiernas <b>AI</b>-politik · 2026</span>
+    <div class="navlinks">
+      <a href="#skiljelinjer">Skiljelinjer</a>
+      <a href="#tabell">Jämförelse</a>
+      <a href="#partier">Partierna</a>
+      <a href="#analys">Analys</a>
+      <a href="#metod">Metod</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap reveal-h">
+    <div class="eyebrow">Valåret 2026 · AI &amp; politik</div>
+    <h1>Vad vill partierna <span class="hl">med AI?</span></h1>
+    <p class="lede">Sju svenska partier har intervjuats om artificiell intelligens inför riksdagsvalet 2026. Här är vad var och en säger, sammanfattat och jämfört sida vid sida.</p>
+    <div class="meta">
+      <span><b>7</b> intervjuer</span>
+      <span><b>9</b> teman</span>
+      <span>Källa: <b>AI Sweden</b> Podcast</span>
+    </div>
+    <div class="flag">
+      <b>En sak att känna till:</b> materialet bygger på sju av riksdagens åtta partier. Sverigedemokraterna (SD) ingår inte i det underlag som sammanställningen utgår från.
+    </div>
+  </div>
+</header>
+
+<!-- ============ SKILJELINJER ============ -->
+<section id="skiljelinjer">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Överblick</div>
+      <h2>Var går skiljelinjerna?</h2>
+      <p>Alla sju lutar åt möjligheter snarare än rädsla. De verkliga skillnaderna ligger djupare: hur mycket AI ska regleras, och vem som ska få del av vinsterna. Placeringarna nedan är en tolkning av vad politikerna faktiskt säger i intervjuerna.</p>
+    </div>
+    <div class="spectra reveal" id="spectra"></div>
+  </div>
+</section>
+
+<!-- ============ TABELL ============ -->
+<section id="tabell" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Sida vid sida</div>
+      <h2>Jämförelse tema för tema</h2>
+      <p>Nio teman, sju partier. Klicka på ett parti för att lyfta fram det och tona ner de andra. Dra i sidled för att se hela tabellen.</p>
+    </div>
+    <div class="table-tools reveal">
+      <span class="lbl">Lyft fram:</span>
+      <div class="pfilter" id="pfilter"></div>
+    </div>
+    <div class="table-scroll reveal">
+      <table class="cmp" id="cmp"></table>
+    </div>
+    <noscript><p class="noscript-note" style="margin-top:16px">Den interaktiva tabellen kräver JavaScript. Varje partis positioner finns även utskrivna i sin helhet under avsnittet ”Partierna”.</p></noscript>
+  </div>
+</section>
+
+<!-- ============ PARTIER ============ -->
+<section id="partier">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Djupdykning</div>
+      <h2>Partierna, en och en</h2>
+      <p>Varje parti sammanfattat i sina egna huvudlinjer, med ordagranna citat ur intervjun och det som är utmärkande just för dem.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- ============ ANALYS ============ -->
+<section id="analys" class="alt">
+  <div class="wrap analysis">
+    <div class="sec-head reveal" style="margin-bottom:24px">
+      <div class="eyebrow">Läsning</div>
+      <h2>Tre skiljelinjer att hålla ögonen på</h2>
+      <p>En neutral läsning av var partierna faktiskt går isär — och var de oväntat är överens.</p>
+    </div>
+    <div class="lines reveal">
+      <div class="split">
+        <h3><span class="n">01</span> Hur hårt ska AI regleras?</h3>
+        <p>Den tydligaste konfliktlinjen. Centerpartiet och Moderaterna vill lätta på EU:s regler för att inte hämma innovation — Rosencrantz vill rentav bromsa delar av AI-akten tills standarder finns. Liberalerna står i stället upp för AI-aktens risknivåbaserade modell och menar att den nått en rimlig nivå. Kristdemokraterna landar i en egen linje: reglera tillämpningen, inte tekniken. Socialdemokraterna vill driva global reglering, medan Vänsterpartiet lägger tyngdpunkten på skydd och mänskligt ansvar men ännu inte har landat i skarpa förslag.</p>
+        <div class="tags" data-tags="reg"></div>
+      </div>
+      <div class="split">
+        <h3><span class="n">02</span> Tillväxt eller fördelning?</h3>
+        <p>Här skiljer blocken sig som väntat. Moderaterna, Centerpartiet och Liberalerna ramar in AI som en tillväxt- och konkurrenskraftsfråga: bättre villkor för företag, kompetens och kapital. Vänsterpartiet, Miljöpartiet och delvis Socialdemokraterna ställer i stället frågan vem som får del av vinsterna, och kopplar AI till arbetstidsförkortning, trygghet och att motverka klyftor. Socialdemokraterna försöker hålla ihop båda: en tillväxtpakt, men med starka trygghetssystem som förutsättning för att människor ska våga bejaka förändringen.</p>
+        <div class="tags" data-tags="fokus"></div>
+      </div>
+      <div class="split">
+        <h3><span class="n">03</span> Det de faktiskt är överens om</h3>
+        <p>Under oenigheten finns en påfallande samsyn. Alla sju ser stor potential i offentlig sektor — särskilt att avlasta vården och kapa administration. Alla oroar sig för digital suveränitet och beroendet av amerikanska molntjänster, om än med olika grad av pragmatism. Och alla pekar på kompetens och omställning som avgörande: från Liberalernas ”hemchattreform” till Vänsterpartiets folkbildningstanke. Skillnaden ligger mindre i målet än i vägen dit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METOD ============ -->
+<section id="metod" class="method">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" style="color:var(--green)">Transparens</div>
+      <h2>Metod &amp; källor</h2>
+      <p>Så här har sammanställningen tagits fram — och vad den inte är.</p>
+    </div>
+    <div class="grid reveal">
+      <div class="box">
+        <h4>Underlaget</h4>
+        <p>Sju avsnitt ur AI Sweden Podcast i serien ”AI Sweden möter … · Valåret 2026”, med programledare Anders Olsson. Varje avsnitt är en enskild intervju med en partiföreträdare.</p>
+      </div>
+      <div class="box">
+        <h4>Så gjordes den</h4>
+        <p>Transkriberingarna har lästs igenom och sammanfattats tema för tema. Citaten är ordagranna ur intervjuerna, med ungefärlig tidsangivelse. Sammanfattningar och placeringar är AI-assisterade och redaktionellt bearbetade.</p>
+      </div>
+      <div class="box">
+        <h4>Partierna</h4>
+        <ul>
+          <li>V — Jessica Wetterling</li>
+          <li>S — Mikael Damberg</li>
+          <li>MP — Daniel Helldén</li>
+          <li>C — Elisabeth Thand Ringqvist</li>
+          <li>L — Helena Gellerman</li>
+          <li>KD — Erik Slottner</li>
+          <li>M — Jessica Rosencrantz</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>Bra att veta</h4>
+        <p>SD ingår inte i underlaget. Placeringarna på skalorna är en tolkning, inte partiernas egna. Vid oklarhet gäller alltid det som sägs i originalintervjun.</p>
+      </div>
+    </div>
+    <p class="disc">Detta är en fristående, pedagogisk sammanställning. Den är inte framtagen av, beställd av eller kopplad till AI Sweden, och gör inte anspråk på att vara heltäckande. Syftet är att göra det lättare att förstå och jämföra partiernas AI-politik inför valet. Hänvisa gärna till originalintervjuerna för fullständig kontext.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="wsbf">Sammanställt av <b>We Should Be Friends</b> AB</span>
+    <span>Stockholm · 2026 · Baserat på AI Sweden Podcast, ”Valåret 2026”.</span>
+  </div>
+</footer>
+
+<script>
+/* ---------- single source of truth ---------- */
+const THEMES = [
+  {key:"grundsyn",   label:"Grundsyn"},
+  {key:"reglering",  label:"Reglering"},
+  {key:"naringsliv", label:"Näringsliv & tillväxt"},
+  {key:"offentlig",  label:"Offentlig sektor & välfärd"},
+  {key:"jobb",       label:"Jobb & omställning"},
+  {key:"kompetens",  label:"Kompetens & utbildning"},
+  {key:"energi",     label:"Energi & infrastruktur"},
+  {key:"suveranitet",label:"Digital suveränitet"},
+  {key:"demokrati",  label:"Demokrati & integritet"}
+];
+
+/* order: left -> right on the traditional spectrum */
+const PARTIES = [
+  {
+    code:"V", party:"Vänsterpartiet", person:"Jessica Wetterling", role:"Riksdagsledamot (konstitutionsutskottet)", color:"var(--p-v)", cvar:"--p-v",
+    summary:{lead:"Möjligheter, men riskerna väger tungt.", rest:" Wetterling ser stora nyttor men lägger tyngdpunkten på integritet, maktkoncentration och växande klyftor. Vinsterna ska komma alla till del, inte ”ett fåtal, framför allt män i USA”. Öppen med att partiet ännu inte landat sin politik — en motion väntas i höst."},
+    themes:{
+      grundsyn:{s:"Ser möjligheter, men politiken ligger flera steg efter och riskerna väger tungt.", l:"AI ligger flera steg före politiken och är här för att stanna. Ser både stora nyttor och stora risker, och menar att frågorna bara blir mer komplexa ju mer man sätter sig in i dem."},
+      reglering:{s:"Vill ha gemensam EU-reglering och nationella riktlinjer. Ännu inga skarpa förslag.", l:"Talar om behovet av gemensam europeisk reglering och nationella riktlinjer för hur AI får och inte får användas, men har ännu inte satt ner foten kring konkreta förslag."},
+      naringsliv:{s:"Litet land som bör agera med EU. Vill satsa mer på forskning.", l:"Sverige är för litet för att leda på egen hand och bör agera tillsammans med EU. Vill knyta ihop näringsliv och offentlig sektor så att nyttan når alla, och pekar på AI Sweden som samlande aktör."},
+      offentlig:{s:"Stora möjligheter — men alltid en människa bakom myndighetsbeslut.", l:"Ser tydlig nytta i snabbare beslut, tumörbedömning och hjälpmedel. Central princip: vid myndighetsbeslut om enskilda måste det alltid finnas en människa att överklaga till och utkräva ansvar av."},
+      jobb:{s:"Automatisering kan ge arbetslöshet — eller kortare arbetstid. Facken måste med.", l:"Automatisering kan leda till arbetslöshet, men också möjliggöra arbetstidsförkortning och att man delar på jobben. Betonar parternas roll och att facken hittills fått för lite inflytande."},
+      kompetens:{s:"AI-kompetens som folkbildning, även riktad mot äldre.", l:"Vill se särskilda satsningar på AI-kompetens, nästan som en folkbildningsinsats, riktade även mot äldre. Oroad över klyftor mellan kön och åldersgrupper, och att tillgång kan bli en ekonomisk fråga."},
+      energi:{s:"Vill förstå serverhallars energi- och resursåtgång. Ingen tydlig position.", l:"Partiet har bjudit in experter för att förstå hur serverhallar fungerar och deras energi- och resursåtgång. Konstaterar att frågan diskuteras livligt, men presenterar ingen tydlig position."},
+      suveranitet:{s:"Tydligt behov av oberoende — oavsett om systemen ligger hos USA eller Kina.", l:"Ser tydligt behov av ökad digital självständighet. Sårbarheten visar sig när system ligger i andras händer, och det spelar ingen roll om det är amerikanska eller kinesiska staten. Vänder sig naturligt mot EU och Norden."},
+      demokrati:{s:"Störst oro för desinformation, valpåverkan och integritet.", l:"Det hon diskuterar mest. Stor oro för desinformation och trovärdiga fejkbilder som urholkar tilltron till information. Återkommande integritetsoro: känslig data i orätta händer, bias, och att människor avstår vård av rädsla för digitala spår."}
+    },
+    quotes:[
+      {t:"Just nu känns det som att AI är många steg före politiken.", src:"Jessica Wetterling · ca 00:00"},
+      {t:"Har vi gett bort hela vårt privatliv till Donald Trump eller Elon Musk? Det behöver man också fundera på.", src:"Jessica Wetterling · ca 13:40"}
+    ],
+    distinct:"Ovanligt öppen med att partiet inte är färdigt — en motion kommer först i höst. Lyfter en unik positiv aspekt: att språkmodeller kan rädda hotade samiska minoritetsspråk.",
+    egenAI:"Självironisk om att inte riktigt hänga med, trots att hon inte fyllt 40 — godkände GDPR vid incheckningen utan att veta vad hon godkände."
+  },
+  {
+    code:"S", party:"Socialdemokraterna", person:"Mikael Damberg", role:"Ekonomisk-politisk talesperson, f.d. finansminister", color:"var(--p-s)", cvar:"--p-s",
+    summary:{lead:"AI i människans tjänst.", rest:" Damberg företräder en teknikoptimistisk socialdemokrati: ny teknik skapar jobb och välstånd. Sverige måste tänka som ”AB Sverige” och göra strategiska teknikval — men trygghetssystemen är det som får människor att våga bejaka förändringen."},
+    themes:{
+      grundsyn:{s:"Optimistisk — AI i människans tjänst. Men en dubbelriktad relation.", l:"Grundläggande optimistisk: AI kan lösa stora samhällsutmaningar och göra jobbet enklare. Men relationen är dubbelriktad och reser nya frågor om transparens, desinformation och människans roll. Poängen är att AI ska bli i människans tjänst."},
+      reglering:{s:"Vill driva global reglering — en förutsättning för fortsatt kraft framåt.", l:"Vill driva global reglering av AI, delvis för att stora globala bolagsägare har problematisk syn på demokrati. Menar att oansvarig AI får människor att reagera mot tekniken, så reglering är en förutsättning för fortsatt utveckling."},
+      naringsliv:{s:"”AB Sverige”: välj några teknikområden att ligga längst fram i. Tillväxtpakt.", l:"Föreslår en tillväxtpakt mellan näringsliv och politik och att tänka som ”AB Sverige”: välja ett fåtal teknikområden (kvant, AI, biotech) att ligga längst fram i, med strategisk styrning snarare än lös samverkan."},
+      offentlig:{s:"AI mot dokumentationsbörda i vården — och mot ekonomisk brottslighet.", l:"AI kan minska dokumentationsbördan i vården och frigöra tid för patienter och klienter. Lyfter särskilt AI mot ekonomisk och organiserad brottslighet: spåra pengatvätt och göra svarta sektorer vita."},
+      jobb:{s:"Oroad — även jurist- och banksektorn drabbas. Trygghet gör att man vågar.", l:"Oroad för omställningen; även finans-, bank- och juristsektorn kan drabbas och inträdesjobb för unga försvinna. Lösningen är starka trygghetssystem, omställning och traineeplatser. Kritiserar den försämrade a-kassan."},
+      kompetens:{s:"Livslångt lärande. Lyfter det ”världsunika” omställningsstudiestödet.", l:"Betonar livslångt lärande och utbildning mitt i livet. Lyfter det världsunika omställningsstudiestödet (omskolning med 80 % av lönen) som framtidssäkrat, men underfinansierat och med för litet utbildningsutbud."},
+      energi:{s:"Fossilfri el som fördel — men ställ krav på datacenter (spillvärme).", l:"Ser Sveriges nästan fossilfria energisystem och låga elpriser som en nyckelfördel. Vill inte bara sälja mark till amerikanska bolag utan ställa krav på datacenter: spillvärme in i fjärrvärmen och bidrag till energiproduktion."},
+      suveranitet:{s:"Värdet får inte fastna hos amerikanska bolag — ta en större del av stacken.", l:"Starkt tema. Oroad över att värdet i AI fastnar hos amerikanska bolag via licenser. Vill att svenska och europeiska företag tar en större del av teknikstacken, längre ner, inte bara användarlagret. En autonomi-, säkerhets- och finansiell fråga."},
+      demokrati:{s:"AI kan användas för desinformation; säkerhetsfrågorna förändras.", l:"AI kan användas för desinformation, och cyber- och säkerhetsfrågorna förändras. Kopplar globala bolagsägares demokratisyn till behovet av reglering. Nämner att AI kan göra oss dummare om vi slutar tänka själva."}
+    },
+    quotes:[
+      {t:"Ja, så att AI blir i människans tjänst. Det måste ju vara hela poängen.", src:"Mikael Damberg · ca 02:00"},
+      {t:"Jag tror att vi måste tänka lite mer som AB Sverige här. Vi är bara tio miljoner invånare.", src:"Mikael Damberg · ca 10:00"}
+    ],
+    distinct:"Finansministerperspektivet: ramar AI som en värdeskapande fråga och driver hårdast att Sverige måste äga en djupare del av teknikstacken. Kopplar trygghet till att våga bejaka snabba teknikskiften.",
+    egenAI:""
+  },
+  {
+    code:"MP", party:"Miljöpartiet", person:"Daniel Helldén", role:"Språkrör", color:"var(--p-mp)", cvar:"--p-mp",
+    summary:{lead:"Vi måste gemensamt ta det här.", rest:" Helldén ser AI som en genomgripande, i grunden positiv kraft som Sverige inte får halka efter i. Ett litet land måste ta utvecklingen tillsammans. Kopplar AI till klimatnytta och betonar att omställningen måste vara rättvis för att undvika en backlash."},
+    themes:{
+      grundsyn:{s:"I grunden positiv — oron är att Sverige halkar efter, inte tekniken själv.", l:"Tydligt möjlighetsorienterad. Beskriver AI som integrerat i det mesta vi gör och något som omstöper samhället och gör det effektivare. Oron han uttrycker är främst att Sverige skulle halka efter."},
+      reglering:{s:"Ambivalent till AI-akten. Gammal lagstiftning måste uppdateras.", l:"Förhåller sig ambivalent till EU:s AI-akt och menar att Storbritannien kanske gjorde det smartare. Kärnbudskapet: gammal lagstiftning från en värld utan AI måste uppdateras, utan att skada konkurrenskraften."},
+      naringsliv:{s:"Inte bygga grundmodellerna — hitta smarta tillämpningar i hela näringslivet.", l:"Sverige ska inte nödvändigtvis bygga de stora grundmodellerna, utan hitta smarta praktiska tillämpningar. Möter industriföretag som gör fantastiskt mycket redan nu; politiken bör backa upp och peka ut riktning."},
+      offentlig:{s:"Enorm nytta — t.ex. AI som upptäcker hjärtinfarkt bättre än läkare.", l:"Ser enorm nytta för det juridiskt styrda offentliga. Exempel: beslutsmodeller i socialtjänsten, patientdata mellan regioner, och AI som upptäcker hjärtinfarkt på akuten bättre än läkarna. Nyckeln är kompetens att använda det."},
+      jobb:{s:"Öppet bekymrad — ”massor blir av med jobbet nu”. Vill ha fyradagarsvecka.", l:"Öppet bekymrad över jobbförluster redan nu. Lösningar: omställningsstöd, kompetensutveckling och MP-idéer som arbetsdelning och kortare arbetstid, samt översyn av skatte- och försäkringssystem för att undvika en backlash."},
+      kompetens:{s:"Kompetensutveckling för alla — lärare först, så eleverna kan nyttiggöra AI.", l:"Kompetensutveckling behövs för alla i arbetslivet. Lärare måste framför allt få kompetens så att elever kan nyttiggöra AI produktivt, inte bara leka med det. Vill ha statligt stöd för att företag ska kunna kompetensutveckla mer."},
+      energi:{s:"Desarmera elkonflikten med utbyggd produktion. AI optimerar grön el.", l:"Varnar för att debatten om att serverhallar äter upp elen blir en konfliktlinje om hushållen får betala priset; den måste desarmeras med utbyggd produktion. Samtidigt är AI lysande för att optimera vind- och solkraft."},
+      suveranitet:{s:"Vill ha resiliens mot både USA och Kina. Stödjer europeiska modeller.", l:"En jättesvår fråga. Efterlyser resiliens så att Sverige inte är beroende av USA om Trump stänger ner, eller av Kina. Stödjer europeiska modeller men varnar för att tappa kontakten med den snabba frontutvecklingen."},
+      demokrati:{s:"Bias och ”barnsjukdomar” kvarstår. Vad styr modellerna?", l:"Lyfter bias och diskriminering i modeller, vem som har möjlighet att använda AI, och hur det bryter in i det demokratiska samtalet. Frågar vad som styr modellerna och nämner att Elon Musks Grok inte är klockren."}
+    },
+    quotes:[
+      {t:"Vi är inget stort land, vi är liksom tio miljoner invånare. Vi måste gemensamt ta det här.", src:"Daniel Helldén · ca 04:00"},
+      {t:"Jag skrev två motioner som jag lät AI skriva. Jag lämnade aldrig in dem — men jag testade.", src:"Daniel Helldén · ca 28:00"}
+    ],
+    distinct:"Klimatlinsen: ramar AI som verktyg för grön omställning (sjöfart, precisionsgödsling, eloptimering). Ovanligt självutlämnande om egna kunskapsluckor, och vill ha en central AI-samordnare i Regeringskansliet.",
+    egenAI:"Lät AI skriva två riksdagsmotioner men lämnade aldrig in dem. Irriterar sig samtidigt på AI som blir för påträngande i vardagen."
+  },
+  {
+    code:"C", party:"Centerpartiet", person:"Elisabeth Thand Ringqvist", role:"Riksdagsledamot, tidigare investerare", color:"var(--p-c)", cvar:"--p-c",
+    summary:{lead:"Politiken har varit alldeles för långsam.", rest:" Thand Ringqvist ser AI som en möjliggörare för Sveriges två största utmaningar: fler jobb och lägre utsläpp. Starkt oroad över att EU:s hårda reglering hämmar innovation och gör Europa till passiv mottagare av AI byggd i USA och Kina."},
+    themes:{
+      grundsyn:{s:"Tydligt möjlighetsdriven. Politiken har varit alldeles för långsam.", l:"Tydligt möjlighetsorienterad. Ser AI som en ny infrastruktur och möjliggörare. Kritiserar politiken för att pendla mellan att vara supernervös och att tro att AI löser allt, och för att generellt vara för långsam."},
+      reglering:{s:"Hjärtefråga: EU-reglerna är för tajta. Vill ha regulatoriska sandlådor.", l:"Hennes tydligaste hjärtefråga. Menar att EU:s reglering är för tajt och för fokuserad på konsumentskydd, och riskerar kväva innovation. Vill ha en översyn och lyfter Storbritanniens regulatoriska sandlådor som förebild."},
+      naringsliv:{s:"Stärk befintliga kluster, inte ”pick the winners”. Miljard till AI-forskare.", l:"Vill inte ha industristöd av ”pick the winners”-typ utan stärka befintliga innovationskluster. Varnar för att gamla konkurrensfördelar hotas, och föreslår en miljard i stipendier för att locka världens bästa AI-forskare till Sverige."},
+      offentlig:{s:"Effektivisera myndigheter — flytta pengar dit ”händer” finns. Incitament olöst.", l:"Vill effektivisera myndigheter så administrativa pengar kan flyttas till vård och skola. Erkänner ärligt att incitamentsproblemet inte är löst: hur får man myndigheter att verkligen vilja använda AI."},
+      jobb:{s:"Instegsjobb för ingenjörer och jurister hotas. ”Brukar räta ut sig.”", l:"Jämför med globaliseringens omställning och tror det brukar räta ut sig i Sverige. Oroad specifikt för att instegsjobb för civilingenjörer, ekonomer och jurister försvinner, medan människonära yrken är svårare att ersätta."},
+      kompetens:{s:"”Pärm och skärm.” Lär dig hantverket — och känna igen fejk.", l:"”Pärm och skärm”: böcker för yngre, men också att lära sig hantera AI, källkritik och att behärska hantverket i grunden. Lyfter AI som inlärningsupplevelse, till exempel dialog med historiska figurer."},
+      energi:{s:"AI stabiliserar en volatil elmarknad och gör lastbalansering.", l:"Ser stort värde i att nya företag använder AI för att stabilisera en volatil elmarknad och göra lastbalansering vid effektbortfall — något som vore omöjligt utan AI:s beräkningskapacitet."},
+      suveranitet:{s:"Jobba hårt på suveränitet — men inte så långt att vi missar det bästa.", l:"Vi måste jobba hårt på digital suveränitet; data kan hamna utom kontroll när bolag köps och säljs. Vill ha egen europeisk infrastruktur och egna språkmodeller där det är vettigt, men varnar för att gå så långt att man inte får använda det bästa internationellt."},
+      demokrati:{s:"Barn måste lära sig känna igen fejk och tänka kritiskt.", l:"Berörs främst i utbildningssammanhang: barn måste lära sig känna igen fejk och vara kritiskt tänkande till det de ser på nätet. Datakontroll och integritet berörs under suveränitet."}
+    },
+    quotes:[
+      {t:"Har vi för strikt lagstiftning här, då kommer den utvecklas i Kina och USA … det är en katastrof för Europa.", src:"Elisabeth Thand Ringqvist · ca 21:00"},
+      {t:"Jag tror egentligen att den stora konflikten är ointresse och okunskap.", src:"Elisabeth Thand Ringqvist · ca 26:00"}
+    ],
+    distinct:"Investerar- och entreprenörsbakgrunden genomsyrar resonemangen. Ihärdig poäng att AI inte bara är generativ AI eller en storstadsfråga — lyfter jordbruk, skog, pappersmassa och energi.",
+    egenAI:"Tidig AI-investerare (fintech sedan 2015). Nämner Claude och Perplexity, och tycker att politiker borde ”leka med” verktygen för att förstå dem."
+  },
+  {
+    code:"L", party:"Liberalerna", person:"Helena Gellerman", role:"Riksdagsledamot, civilingenjör", color:"var(--p-l)", cvar:"--p-l",
+    summary:{lead:"Vi måste bli världsledande på AI-kompetens.", rest:" Gellerman ser AI som den största samhällsomvandlingen hittills, större än internet, och menar att Sveriges konkurrenskraft hänger på att vi ligger i framkant. Politikens roll är dubbelriktad: möjliggöra innovation och skydda individen, utan att överreglera."},
+    themes:{
+      grundsyn:{s:"Större än internet. Säger vi nej till AI backar Sverige.", l:"Starkt möjlighetsorienterad men balanserad. AI är en kraftfull teknik som redan förändrar arbetsliv och offentlig sektor. Alternativet till att ta tillvara tekniken är att Sverige backar — men utvecklingen måste styras i en fri demokratisk riktning."},
+      reglering:{s:"Positiv till AI-akten och dess risknivåer. Vill inte överreglera.", l:"Tydligt positiv till EU:s AI Act och dess risknivåbaserade uppdelning, som hon tycker nått en bra nivå. Vill varken överreglera eller lämna allt åt marknaden. Avvisar både USA-modellen och en mycket strikt hållning."},
+      naringsliv:{s:"Världens mest innovativa land — men kan vara omsprunget om tio år.", l:"Sverige är världens mest innovativa land, men företagen kan vara omsprungna om tio år om de inte hänger med. Vill underlätta för startups förbi ”Death Valley” och öppna offentlig upphandling för små och medelstora företag."},
+      offentlig:{s:"Modernisera stegvis, ”pö om pö”. Vårddata måste stanna i Sverige.", l:"Vill modernisera offentlig sektor och skapa incitament att använda AI för mer tid till patienterna. Betonar att vårddata måste stanna i Sverige, och att man tar det stegvis, med Västra Götalands journalbyte som avskräckande exempel."},
+      jobb:{s:"AI in i alla yrken. Viktigast: att folk inte blir rädda.", l:"AI kommer in i alla yrken, även hantverkare på sikt. Viktigast är att folk inte blir rädda för tekniken, annars risk för backlash. Refererar till Volvo: lättare att vidareutbilda erfaren personal än att ta in ny."},
+      kompetens:{s:"Kärnfråga: världsledande AI-kompetens. Föreslår en ”hemchattreform”.", l:"Kärnan i L:s politik: Sverige ska bli världsledande på AI-kompetens, från grundskola till forskning. Föreslår en ”hemchattreform” (analogi med hem-PC) så barn från 7–8 år kan experimentera. Individanpassat lärande."},
+      energi:{s:"Mycket bra förutsättningar för datacenter — bygg en svensk hub.", l:"Sverige har mycket bra förutsättningar för datacenter. Vill att mer av dessa förutsättningar utnyttjas av europeiska och svenska företag för att skapa en hub med kritisk massa av kompetens. Del av molnen måste finnas fysiskt i Sverige."},
+      suveranitet:{s:"Mest EU-positiva partiet. Påverka lagstiftningen tidigt i Bryssel.", l:"Starkt EU-engagemang: L vill påverka lagstiftning tidigt i Bryssel. Europa måste stärka sin autonomi kring infrastruktur och kontroll över samhällskritisk data. Oro för amerikanska molntjänsters åtkomst, särskilt inom vård och försvar."},
+      demokrati:{s:"Politiken har ”stafettpinnen” för integritet och rättigheter.", l:"Politiken har stafettpinnen för att sätta gränser för personlig integritet och rättigheter — ingen annan gör det. Lyfter rättssäkerhet, cybersäkerhet, och att försvaret måste ligga ännu längre fram för att ha motmedel."}
+    },
+    quotes:[
+      {t:"Det går inte att säga nej till AI … det gäller att vi styr den i en fri demokratisk riktning.", src:"Helena Gellerman · ca 02:00"},
+      {t:"Vi måste bli världsledande på AI-kompetens.", src:"Helena Gellerman · ca 05:00"}
+    ],
+    distinct:"Civilingenjör som argumenterar för fler ingenjörer i riksdagen och för att ”tänka i system”. ”Hemchattreformen” är ett eget konkret förslag, och hon kopplar konsekvent AI till försvarsdimensionen.",
+    egenAI:""
+  },
+  {
+    code:"KD", party:"Kristdemokraterna", person:"Erik Slottner", role:"Civilminister", color:"var(--p-kd)", cvar:"--p-kd",
+    summary:{lead:"Jag kan aldrig styra teknikutvecklingen.", rest:" Slottner ser AI framför allt som en möjlighet, där politikens roll är att skapa förutsättningar snarare än att styra tekniken: färre hindrande regler, mer delbar data, mer beräkningskraft och kompetens. Främsta prioritering: accelerera AI i en fragmenterad offentlig sektor."},
+    themes:{
+      grundsyn:{s:"Möjlighetsdriven. Politiken ska vara möjliggörare, inte styra tekniken.", l:"Tydligt möjlighetsdriven. Politikens roll är att vara möjliggörare och skapa förutsättningar för innovatörer och startups, inte att styra teknikutvecklingen. Medger att tekniken går så snabbt att även han kan känna sig ganska liten."},
+      reglering:{s:"Reglera tillämpningen, inte tekniken. Sandlådor och regelförenkling.", l:"Central distinktion: reglera inte tekniken i sig utan tillämpningen, så att skadlig användning stoppas — manipulation, valpåverkan, bedrägerier, auktoritär kontroll. Lyfter regulatoriska sandlådor och regelförenkling i EU."},
+      naringsliv:{s:"Näringslivet ligger långt före det offentliga. Sänkta trösklar i upphandling.", l:"Näringslivet ligger långt före offentlig sektor i implementering. Betonar att offentlig digitalisering också gynnar privata företag via upphandling, och att man sänkt trösklarna för små och medelstora företag att delta."},
+      offentlig:{s:"Hans starkaste fråga: bryt stuprören mellan 290 kommuner och 359 myndigheter.", l:"Hans starkaste och mest personliga tema. AI kan upptäcka sjukdomar tidigare, minska fallolyckor och kapa administration (bygglov från veckor till minuter). Kallar frigjord tid för mänskliga möten en ”väldigt kristdemokratisk” användning."},
+      jobb:{s:"Gamla jobb försvinner, nya skapas — men nu mer komprimerat och snabbt.", l:"Alla teknikskiften innebär att gamla jobb försvinner och nya skapas, men förändringen nu är troligen snabbare. Politikens uppgift blir viktigare: erbjuda vidareutbildning och omskolning. Nämner osäkerhet om takten."},
+      kompetens:{s:"Behövs både spetskompetens och bred digital kompetens hos alla.", l:"Behöver både spjutspetskompetens och bred digital kompetens. Framhåller upskilling och reskilling och att rigga utbildningssystemet efter arbetsmarknadens behov. Största hindret för implementering får inte bli kompetensbrist."},
+      energi:{s:"Öka beräkningskraften — superdatorer och datahallar (AI Factory).", l:"Behöver öka beräkningskraften med investeringar i superdatorer och datahallar. Nämner AI Factory och superdatorn Mimer i Linköping, samt privata datacenterinvesteringar på flera hundra miljarder i Sverige."},
+      suveranitet:{s:"Minska beroendet av amerikanska techjättar. Svensk molnpolicy klar.", l:"Växande EU-fråga: minska Europas stora beroende av amerikanska techjättar. Pragmatisk hållning — självständighetsbehovet ökar ju känsligare datan är, men allt behöver inte vara egenutvecklat. Sverige har tagit fram en egen molnpolicy."},
+      demokrati:{s:"AI får inte manipulera val, människor eller möjliggöra kontroll.", l:"AI får inte användas för att manipulera människor eller demokratiska val, bedra eller möjliggöra auktoritär kontroll. Integritet återkommer via GDPR och PET-tekniker för att kunna använda sekretessbelagd data utan att röja den."}
+    },
+    quotes:[
+      {t:"Jag kan aldrig styra teknikutvecklingen … däremot kan vi skapa förutsättningar för att få ut det bästa.", src:"Erik Slottner · ca 03:00"},
+      {t:"Vi har 290 kommuner, 21 regioner och 359 myndigheter … de jobbar alltför ofta i stuprör.", src:"Erik Slottner · ca 20:00"}
+    ],
+    distinct:"Talar inifrån regeringsmakten och redovisar konkreta beslut (AI-strategi, AI-verkstad, AI Factory, molnpolicy). Fragmentiseringen i offentlig sektor är hans signaturfråga.",
+    egenAI:"Erkänner att han inte är så tekniskt lagd och ibland ”kväver gäspningar” på tekniska studiebesök. Använde ChatGPT för att faktakolla ett påstående."
+  },
+  {
+    code:"M", party:"Moderaterna", person:"Jessica Rosencrantz", role:"EU-minister", color:"var(--p-m)", cvar:"--p-m",
+    summary:{lead:"I grund och botten ser jag fler möjligheter.", rest:" Rosencrantz ser AI som ett paradigmskifte i klass med internet och vill göra Sverige till ”Europas Silicon Valley”. Receptet är genomgående näringslivsvänligt: lågt skattetryck, regelförenkling, tillgång till el och bättre villkor för startups. Varnar för att överreglering dödar innovation."},
+    themes:{
+      grundsyn:{s:"Paradigmskifte i klass med internet. ”Fler möjligheter.”", l:"Ser AI som ett gigantiskt paradigmskifte som påverkar i princip allting, och jämför det med internet. Betonar upprepade gånger att hon ser fler möjligheter än risker, även om risker finns i all teknisk utveckling."},
+      reglering:{s:"Överreglering dödar innovation. Vill bromsa delar av AI-akten.", l:"Central fråga: rätt reglering skapar marknader medan överreglering dödar innovation, och EU har ofta gått för långt. Vill bromsa delar av AI-akten (särskilt högrisk) tills standarder finns; regeringen har uppvaktat kommissionen om rimligare regler."},
+      naringsliv:{s:"Sverige som ”Europas Silicon Valley”. Lägsta skattetryck på 50 år.", l:"Hennes tyngdpunkt. Sverige ska vara ledande — Stockholm har flest ”unicorns” per capita efter Silicon Valley. Konkreta reformer: lägsta skattetryck på 50 år, regelförenkling, personaloptioner och talangvisum så bolag kan starta, skala och stanna."},
+      offentlig:{s:"Enorm potential — avlasta läkare och lärare, inte ersätta dem.", l:"Ser enorm potential för kvalitet och effektivitet, inte primärt att ersätta personal utan att avlasta läkare och lärare. Regeringen har gett ett hundratal myndigheter AI-uppdrag och inrättat en ”AI-verkstad”."},
+      jobb:{s:"Inget nytt historiskt — men alla måste med via omställning.", l:"Historiskt perspektiv: debatten är inte ny (spinning jenny, internet). En del jobb försvinner, många förändras. Betonar att alla måste med via omskolning och omställningsstöd, och vill ha ett mer dynamiskt arbetsliv."},
+      kompetens:{s:"Kompetens är ”kärnan”. Talangvisum och fler tjejer till STEM.", l:"Kompetens beskrivs som kärnan i det som krävs. Utbildningen måste både leverera rätt kompetenser och möjliggöra omskolning. Vill attrahera talang via talangvisum och snabbspår, och få fler unga och tjejer till STEM."},
+      energi:{s:"Teknikstack som börjar i elen. Fossilfri baskraft med kärnkraft.", l:"Ser AI som en teknikstack som börjar i elförsörjningen. Driver utbyggnad av fossilfri energi med kärnkraft som stabil baskraft. Nämner datacenter konkret, till exempel Ecodatacenter i Dalarna där Mistral investerar."},
+      suveranitet:{s:"Öppenhet framför att stänga ute — men olika regler för olika data.", l:"Tror suveränitet blir en knäckfråga, men förespråkar öppenhet och samarbete framför att stänga ute omvärlden. Vill bygga egen förmåga i moln och datahantering, med olika förhållningssätt för olika data: viss data okej att dela, kritisk data inom EU."},
+      demokrati:{s:"Berörs kort. Integritet, GDPR och digitalt utanförskap.", l:"Berörs kort. Nämner integritet och datahantering som något man måste vara varsam kring och ha regelverk för, samt digitalt utanförskap. Ingen egentlig diskussion om desinformation eller valpåverkan."}
+    },
+    quotes:[
+      {t:"I grund och botten så ser jag fler möjligheter.", src:"Jessica Rosencrantz · ca 05:00"},
+      {t:"Rätt reglering skapar marknader för innovationer, medan överreglering kommer döda innovation.", src:"Jessica Rosencrantz · ca 36:00"}
+    ],
+    distinct:"Starkast uttalade tillväxt- och näringslivsfokus, med målbilderna ”Europas Silicon Valley” och ”EU:s rikaste land om tio år”. EU-ministerperspektivet och den uttalade anti-överregleringslinjen.",
+    egenAI:""
+  }
+];
+
+/* spectrum placements — editorial reading (0..100) */
+const SPECTRA = [
+  {
+    title:"Reglering", sub:"Hur hårt bör AI regleras?",
+    left:"Lätta regler för innovation", right:"Starkare skydd & regler",
+    c1:"#00d689", c2:"#c0143c",
+    pos:{C:8, M:19, KD:34, MP:50, S:64, L:73, V:90}
+  },
+  {
+    title:"Fokus", sub:"Vad ramas AI-politiken kring?",
+    left:"Tillväxt & konkurrenskraft", right:"Fördelning & trygghet",
+    c1:"#1c5fa8", c2:"#c0143c",
+    pos:{M:6, C:20, L:34, KD:47, S:61, MP:79, V:92}
+  },
+  {
+    title:"Grundsyn", sub:"Betonar risker eller möjligheter?",
+    left:"Betonar risker", right:"Betonar möjligheter",
+    c1:"#5c5648", c2:"#00d689",
+    pos:{V:30, S:60, L:78, KD:81, C:85, MP:89, M:95}
+  }
+];
+
+const byCode = Object.fromEntries(PARTIES.map(p=>[p.code,p]));
+
+/* ---------- render spectra ---------- */
+(function(){
+  const host=document.getElementById("spectra");
+  SPECTRA.forEach(ax=>{
+    const el=document.createElement("div");
+    el.className="axis";
+    el.style.setProperty("--c1",ax.c1);
+    el.style.setProperty("--c2",ax.c2);
+    const entries=Object.entries(ax.pos).sort((a,b)=>a[1]-b[1]);
+    // lift alternately when neighbours are close, to reduce overlap
+    let chips="";
+    entries.forEach(([code,val],i)=>{
+      let lift="";
+      if(i>0){
+        const prev=entries[i-1][1];
+        if(val-prev<9){ lift = (entries[i-1]._lift==="1") ? 'data-lift="2"' : 'data-lift="1"'; }
+      }
+      entries[i]._lift = lift.includes('"1"')?"1":(lift.includes('"2"')?"2":"");
+      const p=byCode[code];
+      chips+=`<span class="chip" ${lift} style="left:${val}%;background:${p.color}">${code}<span class="tip">${p.party}</span></span>`;
+    });
+    el.innerHTML=`
+      <h3>${ax.title}</h3>
+      <div class="axis-sub">${ax.sub}</div>
+      <div class="track"><div class="line"></div>${chips}</div>
+      <div class="ends"><span>&larr; ${ax.left}</span><span class="r">${ax.right} &rarr;</span></div>`;
+    host.appendChild(el);
+  });
+})();
+
+/* ---------- render comparison table ---------- */
+(function(){
+  const t=document.getElementById("cmp");
+  let head=`<thead><tr><th class="theme-col">Tema</th>`;
+  PARTIES.forEach(p=>{
+    head+=`<th class="phead" data-col="${p.code}" style="background:${p.color}"><span class="pl">${p.code}</span><span class="pn">${p.person.split(" ").slice(-1)}</span></th>`;
+  });
+  head+=`</tr></thead>`;
+  let body="<tbody>";
+  THEMES.forEach(th=>{
+    body+=`<tr><th scope="row">${th.label}</th>`;
+    PARTIES.forEach(p=>{
+      body+=`<td data-col="${p.code}">${p.themes[th.key].s}</td>`;
+    });
+    body+=`</tr>`;
+  });
+  body+="</tbody>";
+  t.innerHTML=head+body;
+})();
+
+/* ---------- party filter (highlight) ---------- */
+(function(){
+  const bar=document.getElementById("pfilter");
+  let active=null;
+  const btns={};
+  const mkBtn=(label,code,color)=>{
+    const b=document.createElement("button");
+    b.textContent=label;
+    b.onclick=()=>{
+      active = (active===code)?null:code;
+      apply();
+    };
+    if(color){b.dataset.color=color;}
+    bar.appendChild(b);
+    btns[code]=b;
+    return b;
+  };
+  mkBtn("Alla","__all",null);
+  PARTIES.forEach(p=>mkBtn(p.code,p.code,p.color));
+  function apply(){
+    Object.entries(btns).forEach(([code,b])=>{
+      const on = (code===(active||"__all"));
+      b.classList.toggle("active",on);
+      if(on && code!=="__all"){ b.style.background=byCode[code].color; b.style.borderColor=byCode[code].color; }
+      else { b.style.background=""; b.style.borderColor=""; }
+    });
+    document.querySelectorAll("#cmp [data-col]").forEach(cell=>{
+      const dim = active && cell.dataset.col!==active;
+      cell.classList.toggle("dim",!!dim);
+    });
+  }
+  apply();
+})();
+
+/* ---------- render party cards ---------- */
+(function(){
+  const host=document.getElementById("cards");
+  PARTIES.forEach(p=>{
+    const card=document.createElement("article");
+    card.className="pcard reveal";
+    card.id="parti-"+p.code.toLowerCase();
+    card.style.setProperty("--pc",p.color);
+    let themeHtml="";
+    THEMES.forEach(th=>{
+      themeHtml+=`<div class="t"><span class="tk">${th.label}</span><p>${p.themes[th.key].l}</p></div>`;
+    });
+    let quoteHtml="";
+    p.quotes.forEach(q=>{
+      quoteHtml+=`<div class="quote">”${q.t}”<span class="src">${q.src}</span></div>`;
+    });
+    let extra=`<div class="pill-note"><span class="h">Utmärkande</span><p>${p.distinct}</p></div>`;
+    if(p.egenAI){ extra+=`<div class="pill-note"><span class="h">Egen relation till AI</span><p>${p.egenAI}</p></div>`; }
+    card.innerHTML=`
+      <div class="bar"></div>
+      <div class="pc-in">
+        <div class="pc-top">
+          <div class="badge">${p.code}</div>
+          <div class="who">
+            <h3>${p.person}</h3>
+            <div class="role">${p.role}</div>
+            <div class="party">${p.party}</div>
+          </div>
+        </div>
+        <p class="summary"><span class="lead">${p.summary.lead}</span>${p.summary.rest}</p>
+        <div class="themes">${themeHtml}</div>
+        <div class="quotes">${quoteHtml}</div>
+        <div class="extra">${extra}</div>
+      </div>`;
+    host.appendChild(card);
+  });
+
+  /* nav shortcuts to parties */
+  const nav=document.querySelector("nav.top .navlinks");
+})();
+
+/* ---------- analysis tag chips ---------- */
+(function(){
+  const order={
+    reg:["C","M","KD","MP","S","L","V"],
+    fokus:["M","C","L","KD","S","MP","V"]
+  };
+  document.querySelectorAll(".tags[data-tags]").forEach(el=>{
+    const seq=order[el.dataset.tags]||[];
+    el.innerHTML=seq.map(c=>`<span style="background:${byCode[c].color}">${c}</span>`).join("");
+  });
+})();
+
+/* ---------- scroll reveal ---------- */
+(function(){
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
